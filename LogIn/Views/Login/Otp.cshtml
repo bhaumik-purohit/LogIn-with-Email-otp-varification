@@ -1,0 +1,16 @@
+﻿@model LogIn.Models.Onetimepass
+
+
+
+@{
+    <h1>ENTER OTP</h1>
+    <form method="post" asp-area="" asp-controller="Login" asp-action="Otp">
+    <label for="" class="form-label">ENTER OTP</label>
+    <input type="text" class="form-control" asp-for="otp" id="otp" name="otp" placeholder="ENTER YOUR OTP HERE">
+    <h2 class="text-danger"> @ViewBag.error</h2>
+
+     <div style="padding-top: 20px">
+                        <button type="submit" class="btn btn-primary" asp-action="Otp" asp-controller="Login">Verify</button>
+                        </div>
+                        </form>
+}

@@ -1,0 +1,92 @@
+﻿@model LogIn.Models.Register
+
+@{
+    ViewData["Title"] = "Registration";
+}
+
+<h1>Registration</h1>
+
+<h4>Register</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Registration">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="u_name" class="control-label"></label>
+                <input asp-for="u_name" class="form-control" />
+                <span asp-validation-for="u_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="user_name" class="control-label"></label>
+                <input asp-for="user_name" class="form-control" />
+                <span asp-validation-for="user_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pass_word" class="control-label"></label>
+                <input asp-for="pass_word" class="form-control" />
+                <span asp-validation-for="pass_word" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="confirm_password" class="control-label"></label>
+                <input asp-for="confirm_password" class="form-control" />
+                <span asp-validation-for="confirm_password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mobile_number" class="control-label"></label>
+                <input asp-for="mobile_number" class="form-control" />
+                <span asp-validation-for="mobile_number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="date_of_birth" class="control-label"></label>
+                <input type="date" asp-for="date_of_birth" class="form-control" />
+                <span asp-validation-for="date_of_birth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label for="gender">Gender</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="gender" value="Male" asp-for="gender">
+                <label class="form-check-label" for="gender">Male</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="gender" value="Female" asp-for="gender">
+                <label class="form-check-label" for="gender">Female</label>
+            </div>
+   </div>
+
+            <div class="form-group">
+                <label for="friends">friends</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="friends" name="friends" value="Ross" checked>
+                    <label class="form-check-label" for="friends">Ross</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="friends" name="friends" value="Chandler">
+                    <label class="form-check-label" for="friends">Chandler</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="friends" name="friends" value="Joey">
+                    <label class="form-check-label" for="friends">Joey</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
